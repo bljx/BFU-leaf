@@ -1,6 +1,6 @@
 # BFU-leaf
 
-北京林业大学计算机系课程攻略  
+北京林业大学信息学院课程攻略  
 
 受[浙江大学相关项目](https://github.com/QSCTech/zju-icicles)和[清华大学计算机系课程攻略](https://github.com/Trinkle23897/thu-cst-cracker)启发，创立了本项目。  
 
