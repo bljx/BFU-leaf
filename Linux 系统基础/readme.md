@@ -40,6 +40,18 @@ linux基础，在我看来是大一就应该加入专业选修课的，在这里
 
 
 
+## 书籍
+
+1. [《鸟哥的Linux私房菜》](http://cn.linux.vbird.org/)
+
+    直接在鸟哥的网站就能免费看第一版到第三版，很良心。但是作者比较啰嗦，书也很厚，建议挑些重点看。
+
+2. [The Linux Command Line](http://linuxcommand.org/tlcl.php)
+
+    这本书循序[知识共享协议(Creative Commons license)](https://creativecommons.org/licenses/by-nc-nd/3.0/)，pdf版能免费[下载](http://sourceforge.net/projects/linuxcommand/files/TLCL/19.01/TLCL-19.01.pdf/download)。也有中文版，可以自行购买。
+
+
+
 ## 相关资源
 
 1. [清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn/)  
@@ -50,6 +62,3 @@ linux基础，在我看来是大一就应该加入专业选修课的，在这里
 6. [VirtualBox 虚拟机](https://www.virtualbox.org/wiki/Downloads)  
 7. [适用于Windows 10的Win下原生的Linux子系统: WSL](https://docs.microsoft.com/zh-cn/windows/wsl/install-win10)  
 8. [知乎：WSL——Win10的Linux子系统](https://zhuanlan.zhihu.com/WindowsSubsystemForLinux)  
-
-
-
