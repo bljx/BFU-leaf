@@ -35,7 +35,7 @@ linux基础，在我看来是大一就应该加入专业选修课的，在这里
 2. [Linux命令实例练习](https://www.shiyanlou.com/courses/68)  
 3. [Vim编辑器](https://www.shiyanlou.com/courses/2)  
 4. [正则表达式基础](https://www.shiyanlou.com/courses/90)  
-5. [高级 bash 脚本编程指南](高级 bash 脚本编程指南)  
+5. [高级 bash 脚本编程指南](https://www.shiyanlou.com/courses/944)  
 6. [Shell 脚本实现 Linux 系统监控](https://www.shiyanlou.com/courses/597)  
 
 
