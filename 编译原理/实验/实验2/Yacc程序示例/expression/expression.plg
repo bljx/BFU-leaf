@@ -1,0 +1,27 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: expression - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSP67CE.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib yld.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/expression.pdb" /debug /machine:I386 /out:"Debug/expression.exe" /pdbtype:sept 
+".\Debug\expression.obj"
+]
+Creating command line "link.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSP67CE.tmp"
+<h3>Output Window</h3>
+Linking...
+LIBCD.lib(crt0.obj) : error LNK2001: unresolved external symbol _main
+Debug/expression.exe : fatal error LNK1120: 1 unresolved externals
+Error executing link.exe.
+
+
+
+<h3>Results</h3>
+expression.exe - 2 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

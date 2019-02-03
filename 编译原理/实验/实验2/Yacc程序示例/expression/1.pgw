@@ -1,0 +1,16 @@
+[Application]
+WindowPlacement=2 3 -1 -1 -1 -1 150 150 1175 676
+[Editor1]
+FileName=.\expression.y
+ReadOnly=0
+WindowPlacement1=0 1 -1 -1 -1 -1 0 0 1162 433
+WindowOrder1=2
+Position001=0 1
+Cursor001=0 1 0 1
+SyntaxColouring=2
+TargetSyntaxColouring=3
+[Output]
+WindowPlacement1=0 1 -1 -1 -1 -1 25 25 1187 458
+WindowOrder1=1
+Position1=0 1
+Cursor1=0 5 0 5

@@ -1,0 +1,112 @@
+Java中使用正则表达式实现字符串匹配
+2005-11-15 10:37作者：起航了出处：blog.sh责任编辑：方舟　　黑暗岁月
+
+　　有一个String，如何查询其中是否有y和f字符？最黑暗的办法就是： 
+
+　　程序1：我知道if、for语句和charAt()啊。
+
+class Test{
+　public static void main(String args[]) {
+　　String str="For my money, the important thing "+"about the meeting was bridge-building";
+　　char x='y';
+　　char y='f';
+　　boolean result=false;
+　　for(int i=0;i＜str.length;i++){
+　　　char z=str.charAt(i); //System.out.println(z);
+　　　if(x==z||y==z) {
+　　　　result=true;
+　　　　break;
+　　　}
+　　　else result=false;
+　　} 
+　　System.out.println(result);
+　}
+} 
+
+　　好像很直观，但这种方式难以应付复杂的工作。如查询一段文字中，是否有is？是否有thing或ting等。这是一个讨厌的工作。
+
+　　Java的java.util.regex包
+
+　　按照面向对象的思路，把希望查询的字符串如is、thing或ting封装成一个对象，以这个对象作为模板去匹配一段文字，就更加自然了。作为模板的那个东西就是下面要讨论的正则表达式。先不考虑那么复杂，看一个例子： 程序2：不懂。先看看可以吧？
+
+import java.util.regex.*;
+
+class Regex1{
+　public static void main(String args[]) {
+　　String str="For my money, the important thing "+"about the meeting was bridge-building";
+　　String regEx="a|f"; //表示a或f 
+　　Pattern p=Pattern.compile(regEx);
+　　Matcher m=p.matcher(str);
+　　boolean result=m.find();
+　　System.out.println(result);
+　}
+} 
+
+　　如果str匹配regEx，那么result为true，否则为flase。如果想在查找时忽略大小写，则可以写成：
+
+Pattern p=Pattern.compile(regEx,Pattern.CASE_INSENSITIVE); 
+
+　　虽然暂时不知道Pattern（模板、模式）和Matcher（匹配器）的细节，程序的感觉就比较爽，如果先查询is、后来又要查询thing或ting，我们只需要修改一下模板Pattern，而不是考虑if语句和for语句，或者通过charAt()。
+
+　　1、写一个特殊的字符串——正则表达式如a|f。
+
+　　2、将正则表达式编译成一个模板：p
+
+　　3、用模板p去匹配字符串str。
+
+　　思路清楚了，现在看Java是如何处理的（Java程序员直到JDK1.4才能使用这些类。
+
+　　Pattern类与查找
+
+　　①public final class java.util.regex.Pattern是正则表达式编译后的表达法。下面的语句将创建一个Pattern对象并赋值给句柄p：Pattern p=Pattern.compile(regEx);
+
+　　有趣的是，Pattern类是final类，而且它的构造器是private。也许有人告诉你一些设计模式的东西，或者你自己查有关资料。这里的结论是：Pattern类不能被继承，我们不能通过new创建Pattern类的对象。
+
+　　因此在Pattern类中，提供了2个重载的静态方法，其返回值是Pattern对象（的引用）。如：
+
+public static Pattern compile(String regex) {
+　return new Pattern(regex, 0);
+} 
+
+　　当然，我们可以声明Pattern类的句柄，如Pattern p=null；
+
+　　②p.matcher(str)表示以用模板p去生成一个字符串str的匹配器，它的返回值是一个Matcher类的引用，为什么要这个东西呢？按照自然的想法，返回一个boolean值不行吗？
+
+　　我们可以简单的使用如下方法：
+
+boolean result=Pattern.compile(regEx).matcher(str).find(); 
+
+　　其实是三个语句合并的无句柄方式。无句柄常常不是好方式。后面再学习Matcher类吧。先看看regEx——这个怪咚咚。
+
+　　正则表达式之限定符
+
+　　正则表达式（Regular Expression）是一种生成字符串的字符串。晕吧。比如说，String regEx="me+";这里字符串me+能够生成的字符串是：me、mee、meee、meeeeeeeeee等等，一个正则表达式可能生成无穷的字符串，所以我们不可能（有必要吗？）输出正则表达式产生的所有东西。
+
+　　反过来考虑，对于字符串：me、mee、meee、meeeeeeeeee等等，我们能否有一种语言去描述它们呢？显然，正则表达式语言是这种语言，它是一些字符串的模式——简洁而深刻的描述。
+
+　　我们使用正则表达式，用于字符串查找、匹配、指定字符串替换、字符串分割等等目的。
+
+　　生成字符串的字符串——正则表达式，真有些复杂，因为我们希望由普通字符（例如字符 a 到 z）以及特殊字符（称为元字符）描述任意的字符串，而且要准确。
+
+　　先看几个正则表达式例子：
+
+　　程序3：我们总用这个程序测试正则表达式。
+
+import java.util.regex.*;
+
+class Regex1{
+　public static void main(String args[]) {
+　　String str="For my money, the important thing "；
+　　String regEx="ab*"; 
+　　boolean result=Pattern.compile(regEx).matcher(str).find();
+　　System.out.println(result);
+　}
+}//ture 
+
+　　①"ab*"——能匹配a、ab、abb、abbb……。所以，*表示前面字符可以有零次或多次。如果仅仅考虑查找，直接用"a"也一样。但想想替换的情况。 问题regEx="abb*"结果如何？
+
+　　②"ab+"——能匹配ab、abb、abbb……。等价于"abb*"。问题regEx="or+"结果如何？
+
+　　③"or?"——能匹配o和or。? 表示前面字符可以有零次或一次。
+
+　　这些限定符*、+、?方便地表示了其前面字符(子串)出现的次数（我们用{}来描述）： x*，零次或多次 ≡{0,} 

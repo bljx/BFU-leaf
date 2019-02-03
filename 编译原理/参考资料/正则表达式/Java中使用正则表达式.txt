@@ -1,0 +1,233 @@
+作者：leshui
+
+
+jdk1.4中加入了java.util.regex包提供对正则表达式的支持。而且Java.lang.String类中的replaceAll和split函数也是调用的正则表达式来实现的。
+
+  正则表达式对字符串的操作主要包括：字符串匹配，指定字符串替换，指定字符串查找和字符串分割。下面就用一个例子来说明这些操作是如何实现的：
+
+<%@ page import="java.util.regex.*"%>;
+
+<%
+
+Pattern p=null; //正则表达式
+
+Matcher m=null; //操作的字符串
+
+boolean b;
+
+String s=null;
+
+StringBuffer sb=null;
+
+int i=0;
+
+//字符串匹配，这是不符合的
+
+  p = Pattern.compile("a*b";
+
+  m = p.matcher("baaaaab";
+
+  b = m.matches();
+
+out.println(b+"<br>;";
+
+//字符串匹配，这是符合的
+
+  p = Pattern.compile("a*b";
+
+  m = p.matcher("aaaaab";
+
+  b = m.matches();
+
+  out.println(b+"<br>;";
+
+//字符串替换
+
+  p = Pattern.compile("ab";
+
+  m = p.matcher("aaaaab";
+
+  s = m.replaceAll("d";  
+
+  out.println(s+"<br>;";
+
+  p = Pattern.compile("a*b");
+
+  m = p.matcher("aaaaab");
+
+  s = m.replaceAll("d");  
+
+  out.println(s+"<br>;");
+
+  p = Pattern.compile("a*b");
+
+  m = p.matcher("caaaaab");
+
+  s = m.replaceAll("d");  
+
+  out.println(s+"<br>;");
+
+//字符串查找
+
+p = Pattern.compile("cat");
+
+m = p.matcher("one cat two cats in the yard");
+
+sb = new StringBuffer();
+
+while (m.find()) {
+
+     m.appendReplacement(sb, "dog");
+
+     i++;
+
+}
+
+m.appendTail(sb);
+
+out.println(sb.toString()+"<br>;");
+
+out.println(i+"<br>;");
+
+i=0; 
+
+p = Pattern.compile("cat");
+
+m = p.matcher("one cat two ca tsi nthe yard");
+
+  sb = new StringBuffer();
+
+while (m.find()) {
+
+     m.appendReplacement(sb, "dog");
+
+     i++;
+
+}
+
+m.appendTail(sb);
+
+out.println(sb.toString()+"<br>;");
+
+out.println(i+"<br>;");
+
+
+
+
+
+p = Pattern.compile("cat");
+
+m = p.matcher("one cat two cats in the yard");
+
+p=m.pattern();
+
+m = p.matcher("bacatab");
+
+b = m.matches();
+
+out.println(b+"<br>;"); 
+
+s = m.replaceAll("dog"); 
+
+out.println(s+"<br>;"); 
+
+
+
+i=0;
+
+p = Pattern.compile("(fds){2,}");
+
+m = p.matcher("dsa da fdsfds aaafdsafds aaf");
+
+  sb = new StringBuffer();
+
+while (m.find()) {
+
+     m.appendReplacement(sb, "dog");
+
+     i++;
+
+}
+
+m.appendTail(sb);
+
+out.println(sb.toString()+"<br>;");
+
+out.println(i+"<br>;");
+
+
+
+  p = Pattern.compile("cat");
+
+  m = p.matcher("one cat two cats in the yard");
+
+  sb = new StringBuffer();
+
+  while (m.find()) {
+
+     m.appendReplacement(sb, "<font color=\"red\">;cat</font>;");
+
+  }
+
+m.appendTail(sb);
+
+out.println(sb.toString()+"<br>;");
+
+String aa=sb.toString();
+
+out.println(aa+"<br>;");
+
+//字符串分割
+
+  p = Pattern.compile("a+");
+
+  String[] a=p.split("caaaaaat");
+
+  for(i=0;i<a.length;i++)
+
+  {
+
+  out.println(a+"<br>;");
+
+  }
+
+  p = Pattern.compile("a+");
+
+  a=p.split("c aa aaaa t",0);
+
+  for(i=0;i<a.length;i++)
+
+  {
+
+  out.println(a+"<br>;");
+
+  }
+
+  p = Pattern.compile(" +");
+
+  a=p.split("c aa    aaaa t",0);
+
+  for(i=0;i<a.length;i++)
+
+  {
+
+  out.println(a+"<br>;");
+
+  }
+
+  p = Pattern.compile("\\+");
+
+  a=p.split("dsafasdfdsafsda+dsagfasdfa+sdafds");
+
+  out.println(a.length+"<br>;");
+
+  for(i=0;i<a.length;i++)
+
+  {
+
+  out.println(a+"<br>;");
+
+  }
+
+%>; 
+

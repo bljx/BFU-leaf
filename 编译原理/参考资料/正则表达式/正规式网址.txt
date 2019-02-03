@@ -1,0 +1,9 @@
+http://deerchao.net/tutorials/regex/regex.htm
+
+正则表达式30分钟入门教程
+
+C#正则表达式语法应用详解
+http://developer.51cto.com/art/200908/145319.htm
+
+http://www.java2000.net/p10717
+Java 正则表达式的语法参考
