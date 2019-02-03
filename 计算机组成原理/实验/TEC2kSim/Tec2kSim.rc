@@ -1,0 +1,480 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文（中华人民共和国） resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Tec2kSim.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\Tec2kSim.ico"
+IDR_TEC2KSITYPE         ICON                    "res\\Tec2kSimDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_FILE_TEC16
+    BUTTON      ID_FILE_TEC8
+    SEPARATOR
+    BUTTON      ID_FILE_START_MONITOR
+    BUTTON      ID_FILE_LOAD_PROGRAM
+    BUTTON      ID_FILE_RUN_PROGRAM
+    BUTTON      ID_FILE_STOP
+    SEPARATOR
+    BUTTON      ID_FILE_LOAD_DATA
+    BUTTON      ID_FILE_SAVE_DATA
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "&16-位模式\tCtrl+1",          ID_FILE_TEC16
+        MENUITEM "&8-位模式\tCtrl+8",           ID_FILE_TEC8
+        MENUITEM SEPARATOR
+        MENUITEM "启动监控程序(&S)\tCtrl+S",    ID_FILE_START_MONITOR
+        MENUITEM "装入代码(&L)...\tCtrl+L",     ID_FILE_LOAD_PROGRAM
+        MENUITEM "运行代码(&R)...\tCtrl+R",     ID_FILE_RUN_PROGRAM
+        MENUITEM "停止(&T)\tCtrl+T",            ID_FILE_STOP
+        MENUITEM SEPARATOR
+        MENUITEM "发送文件(&E)",                ID_FILE_LOAD_DATA
+        MENUITEM "接收文件(&C)",                ID_FILE_SAVE_DATA
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    ID_APP_EXIT
+    END
+    POPUP "查看(&V)"
+    BEGIN
+        MENUITEM "工具栏(&T)",                  ID_VIEW_TOOLBAR
+        MENUITEM "状态栏(&S)",                  ID_VIEW_STATUS_BAR
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "关于 TEC-2000 模拟器(&A)...", ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "1",            ID_FILE_TEC16,          VIRTKEY, CONTROL, NOINVERT
+    "8",            ID_FILE_TEC8,           VIRTKEY, CONTROL, NOINVERT
+    "L",            ID_FILE_LOAD_PROGRAM,   VIRTKEY, CONTROL, NOINVERT
+    "R",            ID_FILE_RUN_PROGRAM,    VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_START_MONITOR,  VIRTKEY, CONTROL, NOINVERT
+    "T",            ID_FILE_STOP,           VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 226, 67
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 TEC-2000 模拟器"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,7,7,20,20
+    LTEXT           "TEC-2000 模拟器 2.1 Windows 版",IDC_STATIC,36,7,134,8,
+                    SS_NOPREFIX
+    LTEXT           "版权所有 (C) 清华大学计算机系计原实验室, 2002",
+                    IDC_STATIC,35,32,184,9
+    DEFPUSHBUTTON   "确定",IDOK,168,46,51,14,WS_GROUP
+    LTEXT           "开发者: 王  讴",IDC_STATIC,35,19,60,8,SS_NOPREFIX
+END
+
+IDD_START_ADDRESS_DIALOG DIALOG  0, 0, 154, 65
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "运行代码"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,45,44,50,14
+    PUSHBUTTON      "取消",IDCANCEL,97,44,50,14
+    LTEXT           "请输入要运行的程序代码的起始地址。",IDC_STATIC,7,7,137,
+                    8
+    EDITTEXT        IDC_ADDRESS_EDIT,50,22,97,14,ES_AUTOHSCROLL
+    LTEXT           "起始地址:",IDC_STATIC,7,25,37,8
+END
+
+IDD_SAVE_DATA DIALOGEX 0, 0, 193, 117
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "接收文件"
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+    LTEXT           "请设置要接收的内存块的起始地址和长度。",IDC_STATIC,7,7,
+                    156,8
+    GROUPBOX        "",IDC_STATIC,7,34,179,55
+    CONTROL         "已设置完毕",IDC_SAVE_DATA_DEFAULT,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,15,21,54,10
+    CONTROL         "在这里设置",IDC_SAVE_DATA_RESET,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,15,33,53,10
+    LTEXT           "起始地址:",IDC_STATIC,15,51,37,8
+    EDITTEXT        IDC_SAVE_START_EDIT,79,47,99,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "长度(内存单元):",IDC_STATIC,15,71,61,8
+    EDITTEXT        IDC_SAVE_LEN_EDIT,79,68,99,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    DEFPUSHBUTTON   "确定",IDOK,84,96,50,14
+    PUSHBUTTON      "取消",IDCANCEL,136,96,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "FileDescription", "Tec2kSim Microsoft 基础类应用程序"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "Tec2kSim"
+            VALUE "LegalCopyright", "版权所有 (C) 2001"
+            VALUE "OriginalFilename", "Tec2kSim.EXE"
+            VALUE "ProductName", "Tec2kSim 应用程序"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 219
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 60
+    END
+
+    IDD_START_ADDRESS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 147
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 58
+    END
+
+    IDD_SAVE_DATA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 186
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 110
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "TEC-2000 模拟器\n\nTec2kSi\n\n\nTec2kSim.Document\nTec2kSi Document"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Tec2kSim"
+    AFX_IDS_IDLEMESSAGE     "就绪"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "扩展名"
+    ID_INDICATOR_CAPS       "大写"
+    ID_INDICATOR_NUM        "数字"
+    ID_INDICATOR_SCRL       "滚动"
+    ID_INDICATOR_OVR        "改写"
+    ID_INDICATOR_REC        "记录"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "建立新文档\n新建"
+    ID_FILE_OPEN            "打开一个现有文档\n打开"
+    ID_FILE_CLOSE           "关闭活动文档\n关闭"
+    ID_FILE_SAVE            "保存活动文档\n保存"
+    ID_FILE_SAVE_AS         "将活动文档以一个新文件名保存\n另存为"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "显示程序信息，版本号和版权\n关于"
+    ID_APP_EXIT             "退出应用程序；提示保存文档\n退出"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "打开该文档"
+    ID_FILE_MRU_FILE2       "打开该文档"
+    ID_FILE_MRU_FILE3       "打开该文档"
+    ID_FILE_MRU_FILE4       "打开该文档"
+    ID_FILE_MRU_FILE5       "打开该文档"
+    ID_FILE_MRU_FILE6       "打开该文档"
+    ID_FILE_MRU_FILE7       "打开该文档"
+    ID_FILE_MRU_FILE8       "打开该文档"
+    ID_FILE_MRU_FILE9       "打开该文档"
+    ID_FILE_MRU_FILE10      "打开该文档"
+    ID_FILE_MRU_FILE11      "打开该文档"
+    ID_FILE_MRU_FILE12      "打开该文档"
+    ID_FILE_MRU_FILE13      "打开该文档"
+    ID_FILE_MRU_FILE14      "打开该文档"
+    ID_FILE_MRU_FILE15      "打开该文档"
+    ID_FILE_MRU_FILE16      "打开该文档"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "切换到下一个窗格\n下一窗格"
+    ID_PREV_PANE            "切换回前一个窗格\n前一窗格"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "将活动的窗口分隔成窗格\n分隔"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "删除被选对象\n删除"
+    ID_EDIT_CLEAR_ALL       "全部删除\n全部删除"
+    ID_EDIT_COPY            "复制被选对象并将其置于剪贴板上\n复制"
+    ID_EDIT_CUT             "剪切被选对象并将其置于剪贴板上\n剪切"
+    ID_EDIT_FIND            "查找指定的正文\n查找"
+    ID_EDIT_PASTE           "插入剪贴板内容\n粘贴"
+    ID_EDIT_REPEAT          "重复上一步操作\n重复"
+    ID_EDIT_REPLACE         "用不同的正文替换指定的正文\n替换"
+    ID_EDIT_SELECT_ALL      "选择整个文档\n选择全部"
+    ID_EDIT_UNDO            "撤消最后一步操作\n撤消"
+    ID_EDIT_REDO            "重新执行先前已撤消的操作\n重新执行"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "显示或隐藏工具栏\n显隐工具栏"
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n显隐状态栏"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "改变窗口大小"
+    AFX_IDS_SCMOVE          "改变窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小成图标"
+    AFX_IDS_SCMAXIMIZE      "把窗口放大到最大尺寸"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到先前的文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动的窗口并提示保存所有文档"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "把窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务表"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_LOAD_PROGRAM    "装入 TEC-2000 目标程序的代码\n装入代码"
+    ID_FILE_START_MONITOR   "启动 TEC-2000 监控程序\n启动监控"
+    ID_FILE_RUN_PROGRAM     "从指定的地址开始执行程序代码\n运行代码"
+    ID_FILE_STOP            "停止监控程序或其他代码的运行\n停止"
+    ID_FILE_TEC16           "进入16-位工作模式\n16-位模式"
+    ID_FILE_TEC8            "进入8-位工作模式\n8-位模式"
+    ID_FILE_LOAD_DATA       "通过监控程序将代码文件发送到内存中\n发送文件"
+    ID_FILE_SAVE_DATA       "通过监控程序将内存中的数据接收到代码文件中\n接收文件"
+END
+
+#endif    // 中文（中华人民共和国） resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// 英语（美国） resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RT_MANIFEST
+//
+
+1 RT_MANIFEST 
+BEGIN
+    0x3f3c, 0x6d78, 0x206c, 0x6576, 0x7372, 0x6f69, 0x3d6e, 0x3122, 0x302e, 
+    0x2022, 0x6e65, 0x6f63, 0x6964, 0x676e, 0x223d, 0x5455, 0x2d46, 0x2238, 
+    0x7320, 0x6174, 0x646e, 0x6c61, 0x6e6f, 0x3d65, 0x7922, 0x7365, 0x3f22, 
+    0x0d3e, 0x3c0a, 0x7361, 0x6573, 0x626d, 0x796c, 0x7820, 0x6c6d, 0x736e, 
+    0x223d, 0x7275, 0x3a6e, 0x6373, 0x6568, 0x616d, 0x2d73, 0x696d, 0x7263, 
+    0x736f, 0x666f, 0x2d74, 0x6f63, 0x3a6d, 0x7361, 0x2e6d, 0x3176, 0x2022, 
+    0x616d, 0x696e, 0x6566, 0x7473, 0x6556, 0x7372, 0x6f69, 0x3d6e, 0x3122, 
+    0x302e, 0x3e22, 0x0a0d, 0x613c, 0x7373, 0x6d65, 0x6c62, 0x4979, 0x6564, 
+    0x746e, 0x7469, 0x2079, 0x6576, 0x7372, 0x6f69, 0x3d6e, 0x3122, 0x302e, 
+    0x302e, 0x302e, 0x2022, 0x7270, 0x636f, 0x7365, 0x6f73, 0x4172, 0x6372, 
+    0x6968, 0x6574, 0x7463, 0x7275, 0x3d65, 0x5822, 0x3638, 0x2022, 0x616e, 
+    0x656d, 0x223d, 0x694d, 0x656b, 0x4c20, 0x7369, 0x6863, 0x656b, 0x2022, 
+    0x7974, 0x6570, 0x223d, 0x6977, 0x336e, 0x2232, 0x2f20, 0x0d3e, 0x3c0a, 
+    0x6564, 0x6373, 0x6972, 0x7470, 0x6f69, 0x3e6e, 0x694d, 0x656b, 0x4c20, 
+    0x7369, 0x6863, 0x656b, 0x2f3c, 0x6564, 0x6373, 0x6972, 0x7470, 0x6f69, 
+    0x3e6e, 0x0a0d, 0x643c, 0x7065, 0x6e65, 0x6564, 0x636e, 0x3e79, 0x0a0d, 
+    0x643c, 0x7065, 0x6e65, 0x6564, 0x746e, 0x7341, 0x6573, 0x626d, 0x796c, 
+    0x0d3e, 0x3c0a, 0x7361, 0x6573, 0x626d, 0x796c, 0x6449, 0x6e65, 0x6974, 
+    0x7974, 0x7420, 0x7079, 0x3d65, 0x7722, 0x6e69, 0x3233, 0x2022, 0x616e, 
+    0x656d, 0x223d, 0x694d, 0x7263, 0x736f, 0x666f, 0x2e74, 0x6957, 0x646e, 
+    0x776f, 0x2e73, 0x6f43, 0x6d6d, 0x6e6f, 0x432d, 0x6e6f, 0x7274, 0x6c6f, 
+    0x2273, 0x7620, 0x7265, 0x6973, 0x6e6f, 0x223d, 0x2e36, 0x2e30, 0x2e30, 
+    0x2230, 0x7020, 0x6f72, 0x6563, 0x7373, 0x726f, 0x7241, 0x6863, 0x7469, 
+    0x6365, 0x7574, 0x6572, 0x223d, 0x3858, 0x2236, 0x7020, 0x6275, 0x696c, 
+    0x4b63, 0x7965, 0x6f54, 0x656b, 0x3d6e, 0x3622, 0x3935, 0x6235, 0x3436, 
+    0x3431, 0x6334, 0x6663, 0x6431, 0x2266, 0x6c20, 0x6e61, 0x7567, 0x6761, 
+    0x3d65, 0x2a22, 0x2022, 0x3e2f, 0x2f3c, 0x6564, 0x6570, 0x646e, 0x6e65, 
+    0x4174, 0x7373, 0x6d65, 0x6c62, 0x3e79, 0x2f3c, 0x6564, 0x6570, 0x646e, 
+    0x6e65, 0x7963, 0x3c3e, 0x612f, 0x7373, 0x6d65, 0x6c62, 0x3e79
+END
+
+#endif    // 英语（美国） resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\Tec2kSim.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

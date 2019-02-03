@@ -1,0 +1,79 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Tec2kSim - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Release/Tec2kSim.res" /d "NDEBUG" /d "_AFXDLL" "D:\TEC2kSim\Tec2kSim.rc"" 
+Creating temporary file "C:\DOCUME~1\wo\LOCALS~1\Temp\RSP6.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Release/" /Fp"Release/Tec2kSim.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\TEC2kSim\MainFrm.cpp"
+"D:\TEC2kSim\SaveDataDlg.cpp"
+"D:\TEC2kSim\StartAddressDlg.cpp"
+"D:\TEC2kSim\Tec2kSim.cpp"
+"D:\TEC2kSim\Tec2kSimDoc.cpp"
+"D:\TEC2kSim\Tec2kSimView.cpp"
+"D:\TEC2kSim\Tec2kVM.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\wo\LOCALS~1\Temp\RSP6.tmp" 
+Creating temporary file "C:\DOCUME~1\wo\LOCALS~1\Temp\RSP7.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Release/" /Fp"Release/Tec2kSim.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\TEC2kSim\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\wo\LOCALS~1\Temp\RSP7.tmp" 
+Creating temporary file "C:\DOCUME~1\wo\LOCALS~1\Temp\RSP8.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:no /pdb:"Release/Tec2kSim.pdb" /machine:I386 /out:"Release/Tec2kSim.exe" 
+.\Release\MainFrm.obj
+.\Release\SaveDataDlg.obj
+.\Release\StartAddressDlg.obj
+.\Release\StdAfx.obj
+.\Release\Tec2kSim.obj
+.\Release\Tec2kSimDoc.obj
+.\Release\Tec2kSimView.obj
+.\Release\Tec2kVM.obj
+.\Release\Tec2kSim.res
+]
+Creating command line "link.exe @C:\DOCUME~1\wo\LOCALS~1\Temp\RSP8.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+MainFrm.cpp
+SaveDataDlg.cpp
+StartAddressDlg.cpp
+Tec2kSim.cpp
+Tec2kSimDoc.cpp
+Tec2kSimView.cpp
+Tec2kVM.cpp
+D:\TEC2kSim\Tec2kVM.cpp(446) : warning C4305: 'initializing' : truncation from 'const int' to 'const short'
+D:\TEC2kSim\Tec2kVM.cpp(446) : warning C4309: 'initializing' : truncation of constant value
+D:\TEC2kSim\Tec2kVM.cpp(961) : warning C4305: 'initializing' : truncation from 'const int' to 'char'
+D:\TEC2kSim\Tec2kVM.cpp(961) : warning C4309: 'initializing' : truncation of constant value
+D:\TEC2kSim\Tec2kVM.cpp(961) : warning C4305: 'initializing' : truncation from 'const int' to 'char'
+D:\TEC2kSim\Tec2kVM.cpp(961) : warning C4309: 'initializing' : truncation of constant value
+D:\TEC2kSim\Tec2kVM.cpp(1050) : warning C4305: 'initializing' : truncation from 'const int' to 'const char'
+D:\TEC2kSim\Tec2kVM.cpp(1050) : warning C4309: 'initializing' : truncation of constant value
+D:\TEC2kSim\Tec2kVM.cpp(1523) : warning C4305: 'initializing' : truncation from 'const int' to 'char'
+D:\TEC2kSim\Tec2kVM.cpp(1523) : warning C4309: 'initializing' : truncation of constant value
+D:\TEC2kSim\Tec2kVM.cpp(1523) : warning C4305: 'initializing' : truncation from 'const int' to 'char'
+D:\TEC2kSim\Tec2kVM.cpp(1523) : warning C4309: 'initializing' : truncation of constant value
+D:\TEC2kSim\Tec2kVM.cpp(1523) : warning C4305: 'initializing' : truncation from 'const int' to 'char'
+D:\TEC2kSim\Tec2kVM.cpp(1523) : warning C4309: 'initializing' : truncation of constant value
+D:\TEC2kSim\Tec2kVM.cpp(1523) : warning C4305: 'initializing' : truncation from 'const int' to 'char'
+D:\TEC2kSim\Tec2kVM.cpp(1523) : warning C4309: 'initializing' : truncation of constant value
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+Tec2kSim.exe - 0 error(s), 16 warning(s)
+</pre>
+</body>
+</html>
