@@ -87,16 +87,20 @@ C++范式多，特性多，学习时间漫长，学习曲线陡峭。而且相�
   
   编程语言规范(或标准或定义)是一种文档，它定义了一种编程语言，以便用户和实现者能够就该语言中的程序的含义达成一致。C++也是由标准定义的一门编程语言，由ISO C++委员会制定标准。但不建议直接翻标准，大部分人不需要成为语言律师，所以大家对某些语义或者标准库的行为不明确，上[cppreference](https://en.cppreference.com/w/Main_Page)这个网站查就够了。
   
-  标准也不可能做到覆盖整个C++的方方面面，即不能把所有行为都明确规定下来，所有有了implementation-defined behavior,undefined behavior,unspecified behavior。
+  标准也不可能做到覆盖整个C++的方方面面，即不能把所有行为都明确规定下来，所以就有了implementation-defined behavior,undefined behavior,unspecified behavior。
 
   > 3.4.1 1 implementation-defined behavior unspecified behavior where each implementation documents how the choice is made
+  >
   > 2 EXAMPLE An example of implementation-defined behavior is the propagation of the high-order bit when a signed integer is shifted right.
   >
   > 3.4.3 1 undefined behavior behavior, upon use of a nonportable or erroneous program construct or of erroneous data, for which this International Standard imposes no requirements
+  >
   > 2 NOTE Possible undefined behavior ranges from ignoring the situation completely with unpredictable results, to behaving during translation or program execution in a documented manner characteristic of the environment (with or without the issuance of a diagnostic message), to terminating a translation or execution (with the issuance of a diagnostic message).
+  >
   > 3 EXAMPLE An example of undefined behavior is the behavior on integer overflow.
   >
   > 3.4.4 1 unspecified behavior use of an unspecified value, or other behavior where this International Standard provides two or more possibilities and imposes no further requirements on which is chosen in any instance
+  >
   > 2 EXAMPLE An example of unspecified behavior is the order in which the arguments to a function are evaluated.
 
   谭浩强的书为什么被这么多人喷？很大一部分原因就是因为他无视标准的存在，把C/C++当黑盒测试，通过VC6.0的实现反向推测规定(比如经典的`i = i++ + ++i`)，本末倒置。
