@@ -32,8 +32,11 @@ void BubbleSort(List L) {
         i = L->next;
         prev = L;
         while (i->next != end) {
-            if (i->price < i->next->price || (i->price == i->next->price &&
-                                              strcmp(i->name, i->next->name) < 0)) {
+// 201909301705勘误：BJFUOJ上此处无法通过，因为价格相同时，按输入书籍信息的先后打印，  
+//            if (i->price < i->next->price || (i->price == i->next->price &&
+//                                               strcmp(i->name, i->next->name) < 0)) {
+//所以应该是 line39的代码  :  
+            if(i->price < i->next->price){
                 i = swap(prev, i);
                 // DANGER:
                 // use double pointer, or return Type* to reset i
