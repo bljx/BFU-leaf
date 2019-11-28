@@ -4,6 +4,7 @@
 
 受[浙江大学相关项目](https://github.com/QSCTech/zju-icicles)和[清华大学计算机系课程攻略](https://github.com/Trinkle23897/thu-cst-cracker)启发，创立了本项目。  
 
+> 单个文件（夹）下载方式：[DownGit↑](https://minhaskamal.github.io/DownGit/#/home) （内含Google的js引用依赖，如发现下载错误请科学上网）
 
 
 ## 前言
