@@ -1,0 +1,7 @@
+配置web.xml，servlet-mapping那两个映射对应的是啥
+
+post，get的区别（判断题？）
+
+jsp是静态引入，后面还有一个动态引入，考原理辨析
+
+jsp转发，include每年必考
