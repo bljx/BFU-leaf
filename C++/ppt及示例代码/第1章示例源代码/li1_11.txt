@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+class Test
+{
+private:
+	static int n;
+public:
+	Test()
+	{
+		n += 2;
+	}
+	~Test()
+	{
+		n -= 3;
+	}
+	static int getNum()
+	{
+		return n;
+	}
+};
+
+int Test::n=2;
+
+int main()
+{
+	Test *p = new Test;
+	delete p;
+
+	cout<<"n="<<Test::getNum()<<endl;
+
+	return 0;
+}

@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+class TestConst
+{
+private:
+	int a;
+public:
+	TestConst(int x)
+	{
+		a = x;
+	}
+	void set(int x);
+	void show();
+	void show() const;
+};
+
+void TestConst::set(int x)
+{
+	a = x;
+}
+
+void TestConst::show()
+{
+	cout<<"a="<<a<<endl;
+}
+
+void TestConst::show() const
+{
+	cout<<"a="<<a<<endl;
+}
+
+int main()
+{
+	TestConst t1(100);
+	const TestConst t2(200);
+	t1.show();
+	t2.show();
+	t1.set(300);
+//	t2.set(400); //error 常对象只能调用常成员函数
+	t1.show();
+	t2.show();
+
+	return 0;
+}

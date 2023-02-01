@@ -1,0 +1,57 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+const double PI = acos(-1.0);
+
+class Shape{
+public:
+	virtual double area() = 0;
+};
+
+class Circle : public Shape{
+private:
+	double r;
+public:
+	Circle(double r) :r(r){}
+	double area(){ return PI*r*r; }
+};
+
+class rightTriangle : public Shape{
+private:
+	double x, y;
+public:
+	rightTriangle(double x, double y): x(x),y(y){}
+	double area(){return (x*y)/2;}
+};
+
+class Rectangle : public Shape {
+private:
+	double length;
+	double width;
+public:
+	Rectangle(double x, double y) : length(x), width(y){}
+	double area(){ return width*length; }
+};
+
+int main()
+{
+	Circle c(3);
+	rightTriangle t(3,4);
+	Rectangle r(5, 4);
+
+	Shape * p;
+	p = &c;
+	cout<<p->area()<<endl;
+	
+	p = &t;
+	cout<<p->area()<<endl;
+	
+	p = &r;
+	cout << p->area() << endl;
+
+	p = NULL;
+
+	return 0;
+
+}
