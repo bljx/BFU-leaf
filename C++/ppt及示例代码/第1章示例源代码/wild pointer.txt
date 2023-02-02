@@ -1,0 +1,22 @@
+typedef unsigned short int USHORT;
+#include <iostream>
+int main ()
+{
+USHORT *pInt = new USHORT ;
+*pInt = 10 ;
+std::cout << "pInt£º" << *pInt << std::endl ;
+delete pInt;
+
+//pInt = NULL;
+
+long *pLong = new long ;
+*pLong = 90000 ;
+std::cout << "*pLong£º" << *pLong << std::endl ;
+
+//*pInt = 20 ;
+//std::cout << "pInt£º" << *pInt << std::endl ;
+
+std::cout << "*pLong£º" << *pLong << std::endl;
+delete pLong ;
+return 0 ;
+}

@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+class Sample
+{
+private:
+	int x;
+public:
+	static int y;
+	Sample(int a)
+	{
+		x = a;
+		x++;
+		y++;
+	}
+
+	void show()
+	{
+		cout << "x=" << x << ",y=" << y << endl;
+	}
+};
+
+int Sample::y = 0;
+
+int main()
+{
+	Sample s1(5);
+	s1.show();
+	Sample s2(10);
+	s2.show();
+
+	Sample::y = 10;
+	cout << Sample::y << endl;
+
+	system("pause");
+
+	return 0;
+}

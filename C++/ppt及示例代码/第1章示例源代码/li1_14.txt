@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+class A
+{
+private:
+	int x;
+public:
+	A(int a)
+	{
+		x=a;
+	}
+	friend class B;
+};
+
+class B
+{
+public:
+	void show(A a)
+	{
+		cout<<"x="<<a.x<<endl;
+	}
+};
+
+int main()
+{
+	A a(10);
+	B b;
+	b.show(a);
+
+	return 0;
+}

@@ -1,0 +1,45 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+class Person
+{
+private:
+	int num;
+	char *name;
+public:
+	Person(int n, char *str)
+	{
+		cout<<"构造对象"<<str<<endl;
+		num = n;
+		name = new char[strlen(str)+1];
+		strcpy(name, str);
+	}
+	Person(const Person &x)
+	{
+		cout<<"构造对象"<<x.name<<"的拷贝"<<endl;
+		num = x.num;
+		name = new char[strlen(x.name)+8+1];
+		strcpy(name,"copy of ");
+		strcat(name, x.name);
+	}
+	~Person()
+	{
+		cout<<"析构对象"<<name<<endl;
+		delete[] name;
+	}
+	void show()
+	{
+		cout<<"num="<<num<<"\nname="<<name<<endl;
+	}
+};
+
+int main()
+{
+	Person per1(1001,"Sheldon");
+	per1.show();
+	Person per2(per1);
+	per2.show();
+
+	return 0;
+}

@@ -1,0 +1,43 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+class Student
+{
+private:
+	int number;
+	char name[20];
+	char sex;
+	int age;
+public:
+	void set(int a, char *b, char c, int d);
+	void show();
+};
+
+void Student::set(int a, char *b, char c, int d)
+{
+	number = a;
+	strcpy(name, b);
+	sex = c;
+	age = d;
+}
+void Student::show()
+{
+	cout<<number<<'\t'<<name<<'\t'<<sex<<'\t'<<age<<endl;
+}
+
+int main()
+{
+	Student stu1, stu2;
+	Student *p;
+	p = &stu1;
+	stu1.set(101, "zhao", 'M', 18);
+	(*p).show();
+	stu2.set(102, "Li", 'F', 19);
+	p = &stu2;
+	p->show();
+	stu1.show();
+	stu2.show();
+
+	return 0;
+}

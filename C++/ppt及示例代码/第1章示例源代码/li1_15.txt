@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+class Test
+{
+private:
+	int a;
+	const int b;
+public:
+	Test(int x, int y):b(y)
+	{
+		a = x;
+	}
+
+	void show()
+	{
+		cout<<"a="<<a<<" b="<<b<<endl;
+	}
+};
+int main()
+{	
+	Test obj(1,2); 
+	obj.show( );  
+ 	return 0;
+} 

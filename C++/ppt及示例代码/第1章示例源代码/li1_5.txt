@@ -1,0 +1,103 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+class String
+{
+private:
+	char *text;
+public:
+	String(char * ch)
+	{
+		text = new char[strlen(ch) + 1];
+		strcpy_s(text, strlen(ch)+1, ch);  //对于静态数组接受两个参数，对于动态数组必须三个参数
+		cout << "调用构造函数！" << endl;
+	}
+	~String()
+	{
+		delete[] text;
+		cout << "调用析构函数！" << endl;
+	}
+	void show()
+	{
+		cout << "text=" << text << endl;
+	}
+};
+
+int main()
+{
+	String string("Hello world!");
+	string.show();
+	getchar();
+	return 0;
+}
+
+
+++++++++++++++++++++++++++++++++
+
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+
+class Student {
+private:
+	int no;
+	char * name;
+public:
+	Student();
+	Student(int no, char * name);
+	void show();
+	~Student();
+};
+
+Student::Student() {
+	cout << "Constuctor2\n";
+	no = 0;
+	name = NULL;
+}
+
+
+Student::Student(int no, char * name) {
+	cout << "Constructor1\n";
+	this->no = no;
+	if (name != NULL)
+	{
+		this->name = new char[strlen(name) + 1];
+		strcpy_s(this->name, strlen(name) + 1, name);
+	}
+	else
+		this->name = NULL;
+}
+
+void Student::show() {
+	if (name == NULL)
+		return;
+	else
+		cout << no << " " << name << endl;
+
+	
+}
+Student::~Student() {
+	if (name != NULL)
+	{
+		delete[] name;
+		cout << "Destructor1\n";
+	}
+	else
+		cout << "Destructor2\n";
+}
+
+
+int main() {
+	{
+		Student s1(101, "Mary");
+		s1.show();
+
+		Student s2;
+		s2.show();
+	}
+
+	system("pause");
+	return 0;
+}

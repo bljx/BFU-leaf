@@ -1,0 +1,60 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+class Point
+{
+private:
+	double x;
+	double y;
+public:
+	Point(int a, int b)
+	{
+		x = a;
+		y = b;
+	}
+	static double distance1(Point &a, Point &b);
+	friend double distance2(Point &a, Point &b);
+	double distance(const Point & b);
+	double getx()
+	{
+		return x;
+	}
+	double gety()
+	{
+		return y;
+	}
+};
+
+double Point::distance1(Point &a, Point &b)
+{
+	return sqrt((a.x - b.x)*(a.x - b.x) + (a.y - b.y)*(a.y - b.y));
+}
+
+double distance2(Point &a, Point &b)
+{
+	return sqrt((a.x - b.x)*(a.x - b.x) + (a.y - b.y)*(a.y - b.y));
+}
+
+double Point::distance(const Point & b) {
+	return sqrt((x - b.x)*(x - b.x) + (y - b.y)*(y - b.y));
+}
+
+double distance3(Point &a, Point &b)
+{
+	return sqrt((a.getx() - b.getx())*(a.getx() - b.getx()) + (a.gety() - b.gety())*(a.gety() - b.gety()));
+}
+
+int main()
+{
+	Point p1(3, 5);
+	Point p2(5, 3);
+	cout << "用静态成员函数求两点之间的距离：" << Point::distance1(p1, p2) << endl;
+	cout << "用友元函数求两点之间的距离：" << distance2(p1, p2) << endl;
+	cout << "用成员函数求两点之间的距离：" << p1.distance(p2) << endl;
+	cout << "用普通函数求两点之间的距离：" << distance3(p1, p2) << endl;
+
+	system("pause");
+
+	return 0;
+}

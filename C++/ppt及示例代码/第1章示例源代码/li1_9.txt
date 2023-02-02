@@ -1,0 +1,112 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+class Student
+{
+private:
+	char name[10];
+	int age;
+public:
+	void assignment(char *n, int a);
+	void show();
+};
+
+void Student::assignment(char *n, int a)
+{
+	strcpy(name, n);
+	age = a;
+}
+
+void Student::show()
+{
+	cout<<"\t"<<name<<"\t"<<age<<endl;
+}
+
+int main()
+{
+	const int N=100;
+	int n, i;
+	Student stu[N];
+	cout<<"输入学生的人数（不大于100）:";
+	cin>>n;
+	char name[10];
+	int age;
+	for(i=0;i<n;i++)
+	{
+		cout<<"输入第"<<i+1<<"个学生姓名和年龄：";
+		cin>>name>>age;
+		stu[i].assignment(name, age);
+	}
+	cout<<"\n";
+	cout<<"编号\t姓名\t年龄"<<endl;
+	for(i=0;i<n;i++)
+	{
+		cout<<i+1;
+		stu[i].show();
+	}
+
+	return 0;
+}
+
+
+++++++++++++++++++++++++
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Student
+{
+private:
+	string name;
+	int age;
+public:
+	void assignment(string, int);
+	void show();
+};
+
+void Student::assignment(string name, int age)
+{
+	this->name = name;
+	this->age = age;
+}
+
+void Student::show()
+{
+	cout << "\t" << name << "\t" << age << endl;
+}
+
+int main()
+{
+	const int N = 100;
+	int n, i;
+	Student stu[N];
+
+	cout << "输入学生的人数（不大于100）:";
+	cin >> n;
+	string name;
+	int age;
+	
+	for (i = 0; i<n; i++)
+	{
+		//cin.ignore(1024, '\n');
+		cout << "输入第" << i + 1 << "个学生姓名和年龄：";
+		cin >> name >> age;
+		//getline(cin, name);
+		//cin >> age;
+		stu[i].assignment(name, age);
+	}
+
+	cout << "\n";
+	cout << "编号\t姓名\t年龄" << endl;
+	for (i = 0; i<n; i++)
+	{
+		cout << i + 1;
+		stu[i].show();
+	}
+	system("pause");
+
+	return 0;
+}

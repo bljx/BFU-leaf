@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+class Test
+{
+private:
+	int n;
+	static int m;
+public:
+	int p;
+	static int q;
+	Test(int a);
+	static void show1();
+	void show2();
+};
+
+int Test::m=20;
+int Test::q=30;
+
+Test::Test(int a)
+{
+	n=a;
+	p=a;
+}
+
+void Test::show1()
+{
+	cout<<"m="<<m<<"\tq="<<q<<endl;
+}
+
+void Test::show2()
+{
+	cout<<"m="<<m<<"\tq="<<q<<endl;
+	cout<<"n="<<n<<"\tp="<<p<<endl;
+}
+
+int main()
+{
+	Test t(3);
+	cout<<"p="<<t.p<<"\tq="<<t.q<<"\tq="<<Test::q<<endl;
+	Test::show1();
+	t.show1();
+	t.show2();
+
+	return 0;
+}

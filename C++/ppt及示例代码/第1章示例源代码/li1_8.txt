@@ -1,0 +1,123 @@
+#include <iostream>
+using namespace std;
+
+class Date
+{
+private:
+	int year;
+	int month;
+	int day;
+public:
+	Date(int y, int m, int d)
+	{
+		cout<<"调用Date的构造函数"<<endl;
+		year = y;
+		month = m;
+		day = d;
+	}
+	void show()
+	{
+		cout<<year<<"年"<<month<<"月"<<day<<"日";
+	}
+};
+
+class Time
+{
+private:
+	int hour;
+	int minute;
+	int second;
+public:
+	Time(int h, int m, int s)
+	{
+		cout<<"调用Time的构造函数"<<endl;
+		hour = h;
+		minute = m;
+		second = s;
+	}
+	void show()
+	{
+		cout<<hour<<"点"<<minute<<"分"<<second<<"秒"<<endl;
+	}
+};
+
+class Schedule
+{
+private:
+	int number;
+	Time time;
+	Date date;
+
+public:
+	Schedule(int num, int y, int mo, int d, int h, int mi, int s):date(y, mo, d), time(h, mi, s)
+	{
+		cout<<"调用Schedule的构造函数"<<endl;
+		number = num;
+	}
+	void show()
+	{
+		cout<<"序号"<<number<<":";
+		date.show();
+		time.show();
+	}
+};
+
+int main()
+{
+	Schedule s1(1, 2010, 10, 1, 22, 22, 22);
+	s1.show();
+	Schedule s2(2, 2010, 11, 1, 20, 20, 20);
+	s2.show();
+
+	return 0;
+}
+
++++++++++++++++++++++
+
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+class Time{
+private:
+	int hour;
+	int minute;
+	int second;
+public:
+	Time(int h, int m, int s){ hour = h; minute = m; second = s; }
+	int getHour(){ return hour;}
+	int getMinute(){ return minute; }
+	int getSecond(){ return second; }
+};
+
+class Date{
+private:
+	int year;
+	int month;
+	int day;
+public:
+	Date(int y, int m, int d){ year = y; month = m; day = d; }
+	int getYear(){ return year; }
+	int getMonth(){ return month; }
+	int getDay(){ return day; }
+};
+
+class Schedule{
+private:
+	int no;
+	Time time;
+	Date date;
+public:
+	Schedule(int no, int hour, int minute, int second, int year, int month, int day) : time(hour, minute, second), date(year, month, day){ this->no = no; }
+	void show(){
+		cout << no << ":" << "\n";
+		cout << date.getYear() << "年" << date.getMonth() << "月" << date.getDay() << "日" << time.getHour() << "时" << time.getMinute() << "分" << time.getSecond() << "秒" << endl;
+	}
+};
+
+int main(){
+	Schedule s1(1, 12, 5, 55, 2016, 3, 13);
+	s1.show();
+	system("pause");
+	return 0;
+}
