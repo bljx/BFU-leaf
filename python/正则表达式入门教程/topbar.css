@@ -1,0 +1,42 @@
+#topbar {
+    position: relative;
+    background: #ccc;
+    line-height: 2;
+}
+
+#topbar ul {
+    margin: 0;
+    padding: 0;
+}
+
+#topbar li {
+    display: inline-block;
+}
+
+#topbar ul a {
+    display: block;
+    padding: 0 1em;
+}
+
+#topbar ul a:link,
+#topbar ul a:visited,
+#topbar ul a:hover,
+#topbar ul a:active {
+    text-decoration: none;
+    color:#333;
+}
+
+#topbar ul a:hover,
+#topbar ul a:active {
+    text-decoration: none;
+    color:#ccc;
+    background: #333;
+}
+
+#donation {
+    position: absolute;
+    right:15px;
+    top:3px;
+    line-height: 1.2;
+    z-index:100001;
+}
